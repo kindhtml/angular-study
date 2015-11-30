@@ -1,0 +1,19 @@
+{
+  "name": "angular-study",
+  "homepage": "https://github.com/kindhtml/angular-study",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "angularjs#~1.4.8"
+  }
+}

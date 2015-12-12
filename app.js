@@ -22,5 +22,13 @@ app.get('/products', function(req, res){
     res.sendFile(path.join(__dirname + '/public/html/products.html'));
 });
 
+app.get('/books', function(req, res){
+   res.sendFile(path.join(__dirname + '/public/html/books.html'));
+});
+
+app.get('/hello', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/html/hello.html'));
+});
+
 app.listen(8080);
 console.log('Express Listening on port 8080...');

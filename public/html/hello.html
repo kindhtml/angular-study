@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>hello world</title>
+    <script src="../components/angular/angular.js"></script>
+    <script src="../js/hello.js"></script>
+
+    <script src="../js/filter/customFilter.js"></script>
+    <link href="../components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/>
+</head>
+<body ng-app="hello" ng-controller="HelloController">
+    <p><input type="text" ng-model="hello.msg"></p>
+    <p><strong>{{hello.msg}}</strong></p>
+    <p><button ng-click="toUpper()">change</button></p>
+
+    <h1>장바구니</h1>
+    <ul>
+        <li ng-repeat="item in items">
+            <span>{{$index}}</span>
+            <span>{{item.title}}</span>
+            <span>수량:<input type="text" ng-model="item.count"></span>
+            <span>가격:{{item.price}}</span>
+            <span>총합:{{item.count * item.price}}</span>
+            <span><button ng-clik="delete($index)">delete</button></span>
+        </li>
+    </ul>
+    <p>Total : </p>
+</body>
+</html>

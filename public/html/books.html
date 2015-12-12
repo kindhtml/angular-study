@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" ng-app="book">
 <head>
     <meta charset="UTF-8">
     <title>books</title>
@@ -10,7 +10,29 @@
     <link href="../components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
     <link href="../components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/>
 </head>
-<body>
-books test!
+<body ng-controller="bookCtrl">
+
+<div class="navbar navbar-inverse">
+    <a class="navbar-brand" href="#">Books store</a>
+</div>
+
+<div class="panel panel-default row" ng-controller="bookListCtrl">
+    <div class="col-xs-3">
+        <a ng-click="selecteCategory()" class="btn btn-block btn btn-default btn-lg">Home</a>
+        <a ng-click="selecteCategory(item)" class="btn btn-block btn btn-default btn-lg" ng-repeat="item in data.books | orderBy: 'grade' | unique: 'grade'">{{item}}</a>
+    </div>
+    <div class="col-xs-8">
+        <div class="well" ng-repeat="item in data.books | filter: categoryFilterFn">
+            <h3>
+                <strong>{{item.name}}</strong>
+                <span class="pull-right label label-primary">
+                    {{item.price | number:0}} won
+                </span>
+            </h3>
+            <span class="lead">grade : {{item.grade}}</span>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

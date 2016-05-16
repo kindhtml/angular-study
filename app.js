@@ -30,5 +30,21 @@ app.get('/hello', function(req, res){
     res.sendFile(path.join(__dirname + '/public/html/hello.html'));
 });
 
+app.get('/money-book', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/html/money-book.html'));
+});
+
+app.get('/moneybook/data', function(req, res){
+    var moneyBook = [
+        {date: '2016. 1. 11. 오후 8:25:39', description : '저녁식사', money :7000},
+        {date: '2016. 1. 12. 오전 7:29:49', description : '아침식사', money :3800},
+        {date: '2016. 1. 12. 오전 11:45:19', description : '점심식사', money :5500}
+    ];
+    res.json(moneyBook);
+});
+
+
 app.listen(8080);
 console.log('Express Listening on port 8080...');
+
+
